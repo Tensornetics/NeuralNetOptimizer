@@ -1,0 +1,8 @@
+  def build_optimizer(self):
+    # create optimizer
+    optimizer = tf.train.AdamOptimizer()
+
+    # define training operation
+    grads_and_vars = optimizer.compute_gradients(self.model.loss)
+    train_op = optimizer.apply_gradients(grads_and_vars)
+    return train_op
